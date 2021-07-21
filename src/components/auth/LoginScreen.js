@@ -9,21 +9,20 @@ export const LoginScreen = () => {
         <input
           type="text"
           className="auth__input"
-          placeholder="email"
+          placeholder="Email"
           name="email"
           autoComplete="off"
         />
         <input
           type="password"
           className="auth__input"
-          placeholder="password"
+          placeholder="Password"
           name="password"
           autoComplete="off"
         />
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary btn-block">
           Login
         </button>
-        <hr />
         <div className="auth__social-media">
           <p>Log in with social media</p>
           <div className="google-btn">
