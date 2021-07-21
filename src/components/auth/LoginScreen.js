@@ -4,13 +4,25 @@ import { Link } from "react-router-dom";
 export const LoginScreen = () => {
   return (
     <>
-      <h3>Login</h3>
+      <h3 className="auth__title">Login</h3>
       <form>
-        <input type="text" placeholder="email" name="email" />
-        <input type="password" placeholder="password" name="password" />
+        <input
+          type="text"
+          className="auth__input"
+          placeholder="email"
+          name="email"
+          autoComplete="off"
+        />
+        <input
+          type="password"
+          className="auth__input"
+          placeholder="password"
+          name="password"
+          autoComplete="off"
+        />
         <button type="submit">Login</button>
         <hr />
-        <div>
+        <div className="auth__social-media">
           <p>Log in with social media</p>
           <div className="google-btn">
             <div className="google-icon-wrapper">
