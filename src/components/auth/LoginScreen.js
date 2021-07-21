@@ -20,7 +20,9 @@ export const LoginScreen = () => {
           name="password"
           autoComplete="off"
         />
-        <button type="submit">Login</button>
+        <button type="submit" className="btn btn-primary">
+          Login
+        </button>
         <hr />
         <div className="auth__social-media">
           <p>Log in with social media</p>
