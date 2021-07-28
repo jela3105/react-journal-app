@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useForm } from "../../hooks/useForm";
 import validator from "validator";
 
+import { useForm } from "../../hooks/useForm";
+import { startRegisterWithEmail } from "../../actions/auth";
+import { useDispatch } from "react-redux";
+
 export const RegisterScreen = () => {
+  const dispatch = useDispatch();
+
   const [registerValues, handleInputChange] = useForm({
     name: "jela",
     email: "jela@.com",
@@ -18,7 +23,7 @@ export const RegisterScreen = () => {
     e.preventDefault();
     if (isFormValid()) {
       setValidForm({ valid: true, message: "" });
-      console.log("Every thing fine :)");
+      dispatch(startRegisterWithEmail(email, password, name));
     }
   };
 
