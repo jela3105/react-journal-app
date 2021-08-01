@@ -1,6 +1,9 @@
 import { types } from "../types/types";
+const initialState = {
+  loading: false,
+};
 
-export const uiReducer = (state = {}, action) => {
+export const uiReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.uiStartLoading:
       return { ...state, loading: true };
@@ -9,5 +12,6 @@ export const uiReducer = (state = {}, action) => {
       return { ...state, loading: false };
 
     default:
+      return state;
   }
 };
