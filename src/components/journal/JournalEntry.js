@@ -1,6 +1,9 @@
 import React from "react";
+import moment from "moment";
 
 export const JournalEntry = (props) => {
+  const noteDate = moment(props.date);
+
   return (
     <div className="journal__entry pointer">
       {props.url && (
@@ -17,8 +20,8 @@ export const JournalEntry = (props) => {
         <p className="journal__entry-content">{props.body}</p>
       </div>
       <div className="journal__entry-date-box">
-        <span>Monday</span>
-        <h4>28</h4>
+        <span>{noteDate.format("dddd")}</span>
+        <h4>{noteDate.format("Do")}</h4>
       </div>
     </div>
   );
