@@ -26,3 +26,15 @@ export const startLoadingNotes = (uid) => {
 };
 
 export const setNotes = (notes) => ({ type: types.notesLoad, payload: notes });
+
+export const startSaveNote = (note) => {
+  return async (dispatch, getState) => {
+    if (!note.url) {
+      delete note.url;
+    }
+    const { uid } = getState().auth;
+    const noteToFirestore = { ...note };
+    delete noteToFirestore.id;
+    await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore);
+  };
+};
