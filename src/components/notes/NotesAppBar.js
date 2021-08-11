@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { startSaveNote } from "../../actions/notes";
+import { startSaveNote, startUploading } from "../../actions/notes";
 
 //https://api.cloudinary.com/v1_1/jela3105
 export const NotesAppBar = () => {
@@ -16,7 +16,10 @@ export const NotesAppBar = () => {
   };
 
   const handleFileChange = (e) => {
-    console.log(e.target.files);
+    const file = e.target.files[0];
+    if (file) {
+      dispatch(startUploading(file));
+    }
   };
 
   return (

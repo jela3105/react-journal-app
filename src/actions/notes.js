@@ -45,3 +45,11 @@ export const refreshNote = (id, note) => ({
   type: types.notesUpdate,
   payload: { id, note: { id, ...note } },
 });
+
+export const startUploading = (file) => {
+  return (dispatch, getState) => {
+    const { active: activeNote } = getState().notes;
+    console.log(file);
+    console.log(activeNote);
+  };
+};
